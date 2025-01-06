@@ -1,0 +1,129 @@
+% --------------------------
+% ---- DECLARE PACKAGES ----
+% --------------------------
+\documentclass[a4paper, oneside, openright]{book}
+\usepackage[T1]{fontenc} % Font encoding, T1 = it
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc} % Input encoding - per caratteri particolari
+\usepackage[english]{babel} % Lingua principale inglese
+\usepackage{blindtext} % Per la generazione di paragrafi lorem ipsum
+\usepackage{graphicx} % Per includere immagini esterne
+\usepackage[a4paper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm]{geometry} %impaginazione e margini documento
+\usepackage[fontsize=12pt]{scrextend} %dimensione font
+\usepackage[hang,flushmargin]{footmisc} % Disabilita l'indentazione nelle footnotes
+\usepackage{titlesec}
+\usepackage[newfloat]{minted} % Per i blocchi di codice
+\usepackage{float}
+\usepackage[font=scriptsize, skip=5pt]{caption} % Spazio tra la caption e l'immagine
+\usepackage[backend=biber, style=numeric, defernumbers=true, sorting=none]{biblatex}
+\usepackage[immediate]{silence}
+\WarningFilter[temp]{latex}{Command} % silence the warning
+\usepackage{sectsty}
+\DeactivateWarningFilters[temp] % So nothing unrelated gets silenced
+\usepackage{hyperref} % Rende l'indice cliccabile
+\usepackage[justification=centering]{caption} %per centrare le captions
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{courier} % font per minted
+\usepackage{csquotes} % Dipendenza di babel
+\usepackage{acronym}
+\usepackage{setspace}
+\usepackage{listings}
+\usepackage{adjustbox}
+
+% ------------------------
+% ---- DOCUMENT SETUP ----
+% ------------------------
+\pagestyle{plain}
+\raggedbottom % Se la pagina non è completa, lascia lo spazio alla fine
+
+\newcommand{\chapnumfont}{%     % define font for chapter number
+  \usefont{T1}{pnc}{b}{n}%      % choose New Chancery, bold, normal shape
+  \fontsize{85}{100}%          % font size 100pt, baselineskip 100pt
+  \vspace{-120pt}               % margin top
+  \selectfont%                  % activate font
+}
+
+\colorlet{chapnumcol}{gray!75}
+\titleformat{\chapter}[display]
+{\filleft\bfseries}
+{\filleft\chapnumfont\textcolor{chapnumcol}{\thechapter}}
+{-24pt}
+{\Huge}
+
+\titleformat{name=\chapter, numberless}
+{\filleft\bfseries}
+{}
+{0pt}
+{\Huge}[\vspace{45pt}]
+\titlespacing*{name=\chapter, numberless}{0pt}{0pt}{0pt}
+
+\hypersetup{ % Setup dell'aspetto dei link
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+\renewcommand{\footnoterule}{ % Rende la linea delle footnotes larga tutta la pagina
+  \kern -3pt
+  \hrule width \textwidth height 1pt
+  \kern 2pt
+} 
+\renewcommand{\footnotesize}{\fontsize{11pt}{13pt}\selectfont} % Imposta la dimensione del testo delle footnotes
+\setlength{\footnotesep}{0.5cm} % Imposta lo spazio fra e singole footnotes
+\setlength{\skip\footins}{1.5cm} % Imposta lo spazio fra il corpo e le footnotes
+
+\DeclareUnicodeCharacter{02BC}{}
+
+\newenvironment{code}{\captionsetup{type=listing}}{}
+\SetupFloatingEnvironment{listing}{name=Codice}
+
+\usemintedstyle{bw} % setta lo stile dei blocchi minted
+\definecolor{bg}{rgb}{0.95,0.95,0.95}
+
+\makeatletter
+\AtBeginEnvironment{minted}{\dontdofcolorbox}
+\def\dontdofcolorbox{\renewcommand\fcolorbox[4][]{##4}}
+\makeatother
+
+\newcommand*\blankpage{\newpage\null\thispagestyle{empty}\newpage}
+
+% ------------------------
+% ---- DOCUMENT START ----
+% ------------------------
+\addbibresource{bibliography.bib} % Importiamo la bibliografia
+\begin{document} % Inizio documento
+\pagenumbering{gobble} % Disabilita numerazione pagine
+\input{intestazione.tex} % PAGINA FRONTESPIZIO
+\newpage % Nuova pagna
+\setcounter{chapter}{0} % Fa risultare l'introduzione come capitolo 0
+%\input{Dedica}
+\tableofcontents
+
+%\chapter*{Lista degli acronimi} % acronym 
+%\input{acronyms.tex} 
+%\blankpage
+\newpage % Nuova pagna
+\pagenumbering{arabic} % Riabilita la numerazione in modo che cominci dal primo capitolo
+% ------------------
+% ---- CHAPTERS ----
+% ------------------
+\input{Chapters/introduction}
+\input{Chapters/wpa2overview}
+\input{Chapters/enviroment}
+\input{Chapters/deauth}
+\input{Chapters/eviltwin}
+\input{Chapters/unsecureconnection}
+\input{Chapters/conclusion}
+
+% ----------------------
+% ---- BIBLIOGRAPHY ----
+% ----------------------
+\backmatter
+\printbibliography[heading=bibintoc, title=Bibliografia/Sitografia]
+\sloppy % serve a non far andare i link oltre ai margini
+% ----------------------
+% ---- DOCUMENT END ----
+% ----------------------
+\end{document} % Fine documento

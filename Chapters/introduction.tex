@@ -1,0 +1,17 @@
+\chapter{Introduction}
+
+This project serves as an in-depth exploration of the security challenges and vulnerabilities associated with WPA2 (Wi-Fi Protected Access 2), one of the most widely used protocols for securing wireless networks. WPA2, based on the Advanced Encryption Standard (AES), provides robust mechanisms for ensuring data confidentiality and integrity. However, practical implementations of this protocol are not immune to targeted attacks, making it critical to understand both its strengths and weaknesses.
+
+The study is structured around three interconnected simulations, each highlighting a specific aspect of wireless network security:
+
+\begin{enumerate}
+    \item \textbf{Exploring WPA2 Handshake Vulnerabilities}: The first simulation focuses on capturing and analyzing the WPA2 four-way handshake, demonstrating how adversaries can exploit weaknesses in passphrase selection through brute-force attacks using precompiled dictionaries. This experiment underscores the importance of strong, complex passwords in mitigating such risks.
+
+    \item \textbf{Evil Twin Attack Simulation}: The second simulation illustrates the creation of an Evil Twin access point, a common phishing attack designed to deceive users into connecting to a rogue network. By mimicking a legitimate network, the attacker can intercept sensitive data, emphasizing the critical need for user awareness and advanced authentication mechanisms.
+
+    \item \textbf{Data Transmission in Unencrypted Networks}: The final simulation examines the risks of open networks, where data is transmitted in plain text. By hosting a simple HTTP form on an attacker device and capturing traffic using Wireshark, the study reveals how sensitive information, such as usernames and passwords, can be intercepted when encryption is absent.
+\end{enumerate}
+
+Through these simulations, conducted in a controlled environment using open-source tools such as Aircrack-ng and Wireshark, this project bridges theoretical concepts with practical applications. The findings provide a comprehensive understanding of wireless network vulnerabilities and underscore the necessity of adopting modern security protocols, such as WPA3, and following best practices to safeguard against emerging threats.
+
+This report integrates technical analyses with hands-on experimentation, offering insights into the complexities of wireless security and the ongoing efforts required to ensure robust protection in real-world scenarios.

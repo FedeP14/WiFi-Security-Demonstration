@@ -1,0 +1,22 @@
+\chapter{Conclusion}
+
+This project has explored the vulnerabilities and security challenges associated with wireless networks, focusing on the WPA2 protocol. Through three interconnected simulations, both theoretical and practical aspects of wireless security were analyzed, shedding light on the risks posed by insufficient protection and outdated configurations.
+
+The first simulation demonstrated the vulnerability of the WPA2 four-way handshake to brute-force attacks, emphasizing the critical need for strong and complex passwords. By capturing the handshake and successfully executing a dictionary attack, the experiment highlighted how attackers can exploit weak credentials, even in networks utilizing advanced encryption standards like AES.
+
+The second simulation illustrated the creation of an Evil Twin access point, a common attack vector used to deceive users into connecting to a rogue network. This experiment showcased the risks posed by user behavior and the lack of server certificate verification in some configurations. Although the simulation was limited by hardware constraints, it effectively demonstrated the feasibility of such an attack, further reinforcing the importance of user education and advanced authentication protocols.
+
+The final simulation focused on unencrypted networks, showing how sensitive data, such as usernames and passwords, can be intercepted when transmitted over open Wi-Fi. By analyzing HTTP traffic with Wireshark, the experiment underscored the importance of encryption protocols like HTTPS and the necessity of securing public and private networks to protect user data from potential eavesdroppers.
+
+These experiments collectively highlight several key takeaways:
+\begin{itemize}
+    \item The importance of adopting strong passwords and modern security protocols, such as WPA3, to mitigate vulnerabilities.
+    \item The need for user awareness about the risks of connecting to open or suspicious networks and the dangers of transmitting sensitive information without encryption.
+    \item The critical role of encryption protocols, such as HTTPS and TLS, in securing online communications.
+\end{itemize}
+
+While the simulations were conducted in a controlled environment, they mimic real-world scenarios where attackers exploit common weaknesses in wireless networks. The findings underscore the necessity for continuous advancements in wireless security standards, as well as proactive measures by both network administrators and end users.
+
+Future work could explore the implementation of WPA3, which introduces significant improvements in authentication and encryption mechanisms. Additionally, more advanced simulations could include the integration of intrusion detection systems and the analysis of enterprise-level security measures, such as EAP-TLS.
+
+By combining theoretical knowledge with practical experimentation, this project provides a comprehensive understanding of wireless security vulnerabilities and offers insights into best practices for safeguarding modern networks. Wireless security remains a dynamic field, and as technology evolves, so must our approach to protecting sensitive information in an increasingly connected world.

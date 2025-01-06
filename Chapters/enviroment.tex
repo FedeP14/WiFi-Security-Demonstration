@@ -1,0 +1,25 @@
+\part{Practical Implementation}
+\chapter{Enviroment}
+\section{Hardware Specification}
+The hardware utilized for the testing environment comprised a laptop with specifications tailored to meet the requirements of wireless network testing, particularly for WPA2 security evaluation. The primary device used was an \textbf{ASUS ZenBook UX331U} with the following hardware configuration:
+
+\begin{itemize}
+    \item \textbf{Processor:} Intel\textsuperscript{\textregistered} Core\texttrademark\ i7-8550U Processor, featuring 4 cores and a base clock speed of 1.8 GHz, with a turbo boost up to 4.0 GHz, and an 8 MB cache.
+    \item \textbf{Memory:} 8 GB of RAM, ensuring smooth performance for resource-intensive tasks such as packet capture and traffic analysis.
+    \item \textbf{Wireless Network Interface:} Intel\textsuperscript{\textregistered} Dual Band Wireless-AC 8265 module, which supports:
+    \begin{itemize}
+        \item \textbf{TX/RX Streams:} 2x2
+        \item \textbf{Frequency Bands:} Dual-band operation at 2.4 GHz and 5 GHz.
+        \item \textbf{Maximum Speed:} Up to 867 Mbps, compliant with the Wi-Fi 5 (802.11ac) standard.
+    \end{itemize}
+\end{itemize}
+
+\section{Operating System}
+
+For this project, I used \textbf{Kali Linux} version 2024.3, running in \textit{Live USB} mode with \textbf{data persistence} enabled. This configuration allowed me to work directly from a USB drive while saving changes and settings between sessions, making it practical for repeated testing without the need to reconfigure the environment every time.
+
+Kali Linux is a specialized operating system designed for penetration testing and cybersecurity tasks. It comes with a wide range of pre-installed tools, such as \textit{airmon-ng}, \textit{aircrack-ng}, and \textit{Wireshark}, which were essential for capturing WPA2 handshakes, analyzing network traffic, and simulating attacks. 
+
+Using a persistent Live USB setup ensured flexibility and portability while maintaining a stable testing environment. This approach was particularly useful for experimenting with different configurations and tools specific to the project without affecting the main operating system on my laptop.
+
+
