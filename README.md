@@ -24,7 +24,7 @@ The project includes the following simulations:
 
 ## 🛠 Tools Used
 
-- **Aircrack-ng Suite**: Tools like `airomon-ng`, `airodump-ng`, `airbase-ng`, and `aireplay-ng` for network monitoring, packet capture, and injection.
+- **Aircrack-ng Suite**: Tools like `airmon-ng`, `airodump-ng`, `airbase-ng`, and `aireplay-ng` for network monitoring, packet capture, and injection.
 - **Wireshark**: Network protocol analyzer for inspecting captured traffic.
 - **Python**: Hosted a simple HTTP site for data interception demonstrations.
 
